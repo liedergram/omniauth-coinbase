@@ -27,7 +27,8 @@ module OmniAuth
                 :cert_store => ::Coinbase::Wallet::APIClient.whitelisted_certificates
               }
       }
-      option :authorize_options, [:scope, :meta]
+      # https://developers.coinbase.com/docs/wallet/coinbase-connect/reference
+      option :authorize_options, [:scope, :meta, :layout, :referral, :account]
 
       uid { raw_info.id }
 
